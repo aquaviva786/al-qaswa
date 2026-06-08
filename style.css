@@ -84,6 +84,11 @@ button, input, textarea, select {
   font-weight: 700;
 }
 
+body[data-page="home"] .brand-name {
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
