@@ -223,10 +223,10 @@ body[data-page="home"] .brand-name {
 }
 
 .hero-image {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
-  max-height: clamp(300px, 60vh, 500px);
-  object-fit: contain;
+  object-fit: none;
   object-position: center;
 }
 
