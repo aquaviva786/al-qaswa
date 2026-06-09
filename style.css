@@ -45,7 +45,7 @@ button, input, textarea, select {
 }
 
 .section {
-  padding: 4rem 0;
+  padding: clamp(2rem, 6vw, 4rem) 0;
 }
 
 .site-header {
@@ -175,7 +175,7 @@ body[data-page="home"] .brand-name {
 }
 
 .hero {
-  min-height: calc(100vh - 100px);
+  min-height: clamp(70vh, 100vh - 100px, 100vh);
   display: grid;
   align-items: center;
 }
@@ -198,7 +198,7 @@ body[data-page="home"] .brand-name {
 }
 
 .hero-copy h1 {
-  font-size: clamp(2.6rem, 4vw, 4rem);
+  font-size: clamp(1.8rem, 5vw, 4rem);
   line-height: 1.05;
   margin: 0;
 }
@@ -224,7 +224,7 @@ body[data-page="home"] .brand-name {
 
 .hero-image {
   width: 100%;
-  max-height: 500px;
+  max-height: clamp(300px, 60vh, 500px);
   object-fit: cover;
   object-position: center;
 }
@@ -244,7 +244,7 @@ body[data-page="home"] .brand-name {
 
 .story-video {
   width: 100%;
-  max-height: 450px;
+  max-height: clamp(250px, 50vh, 450px);
   object-fit: cover;
   border-radius: 12px;
   box-shadow: var(--shadow);
@@ -710,7 +710,7 @@ body[data-page="home"] .brand-name {
 
 .whatsapp-button {
   position: fixed;
-  right: 20px;
+  left: 20px;
   bottom: 90px;
   width: 55px;
   height: 55px;
@@ -750,7 +750,10 @@ body[data-page="home"] .brand-name {
 }
 
 @media (max-width: 1080px) {
-  .feature-grid,
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .product-grid,
   .client-grid,
   .benefits-grid,
@@ -759,8 +762,10 @@ body[data-page="home"] .brand-name {
   .contact-grid,
   .product-list-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .client-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 1rem;
   }
 
@@ -819,24 +824,111 @@ body[data-page="home"] .brand-name {
   .certificate-body {
     grid-template-columns: 1fr;
   }
+}
 
-  .feature-grid,
-  .client-grid {
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 0.75rem 0;
+  }
+
+  .section {
+    padding: clamp(1.5rem, 4vw, 3rem) 0;
+  }
+
+  .hero-actions {
+    gap: 0.75rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 2fr 2fr;
+  }
+
+  .payment-grid {
     grid-template-columns: 1fr;
+  }
+
+  .table-wrapper {
+    font-size: 0.9rem;
+  }
+
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    bottom: 70px;
+    left: 15px;
+  }
+
+  .whatsapp-button svg {
+    width: 24px;
+    height: 24px;
   }
 }
 
 @media (max-width: 640px) {
+  .container {
+    width: min(100%, calc(100% - 1rem));
+  }
+
+  .section {
+    padding: clamp(1.5rem, 3vw, 2.5rem) 0;
+  }
+
   .header-inner {
-    padding: 1rem 0.5rem;
+    padding: 0.75rem 0.5rem;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+  }
+
+  h3 {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+  }
+
+  .hero-copy .eyebrow {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.7rem;
+  }
+
+  .hero-text {
+    font-size: 0.95rem;
+    margin: 1rem 0 1.5rem;
+  }
+
+  .hero-actions {
+    gap: 0.5rem;
+    flex-direction: column;
   }
 
   .button {
     width: 100%;
+    padding: 0.85rem 1.2rem;
+    font-size: 0.95rem;
   }
 
-  .hero-image {
-    min-height: 260px;
+  .hero-image-card {
+    border-radius: 16px;
+  }
+
+  .story-video {
+    border-radius: 12px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .feature-card {
+    padding: 1.25rem;
+  }
+
+  .product-detail-card {
+    padding: 1rem;
   }
 
   .badge-panel,
@@ -849,19 +941,36 @@ body[data-page="home"] .brand-name {
   .delivery-copy,
   .clients-panel,
   .microbial-panel {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 
   .footer-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
-}
 
-@media (max-width: 500px) {
-  .nav-button,
-  .footer-nav,
-  .certificate-body,
-  .benefits-grid {
-    grid-template-columns: 1fr;
+  .footer-grid div {
+    text-align: center;
+  }
+
+  .table-wrapper {
+    font-size: 0.8rem;
+    overflow-x: auto;
+  }
+
+  .table-wrapper table {
+    min-width: 100%;
+  }
+
+  .whatsapp-button {
+    width: 50px;
+    height: 50px;
+    bottom: 60px;
+    left: 12px;
+  }
+
+  .whatsapp-button svg {
+    width: 22px;
+    height: 22px;
   }
 }
