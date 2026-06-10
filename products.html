@@ -8,6 +8,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .product-list-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      align-items: start;
+    }
+
+    .product-detail-image {
+      display: block;
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto 18px;
+    }
+
+    .product-detail-card {
+      text-align: center;
+    }
+
+    .product-detail-card .product-specs {
+      text-align: left;
+    }
+  </style>
 </head>
 <body data-page="products">
   <a class="whatsapp-button" href="https://wa.me/923288888820" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
