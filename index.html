@@ -8,6 +8,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hero-image-card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .hero-image {
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+      object-fit: contain;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .hero-image-card {
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body data-page="home">
   <a class="whatsapp-button" href="https://wa.me/923288888820" target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp" title="Chat on WhatsApp">
@@ -43,7 +67,7 @@
           </div>
         </div>
         <div class="hero-image-card">
-          <img src="assets/images/hero.png" alt="Aqua Viva hero" class="hero-image">
+          <img src="assets/images/oghero.png" alt="Aqua Viva hero" class="hero-image">
         </div>
       </div>
     </section>
